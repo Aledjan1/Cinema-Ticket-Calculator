@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Ticket Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-icon">🎟️</div>
+        <div class="header-text">
+          <h1>Cinema Ticket Calculator</h1>
+          <p>Calculate the total price for one or more people</p>
+        </div>
+        <div class="header-decoration">🍿 🎬</div>
+      </header>
+
+      <div class="dashboard">
+        <!-- LEFT PANEL -->
+        <div class="left-column">
+          <section class="ticket-panel">
+            <h2>Add a Ticket</h2>
+
+            <div class="form-content">
+              <div class="form-group">
+                <label for="age">Age</label>
+                <input
+                  type="number"
+                  id="age"
+                  min="0"
+                  max="120"
+                  placeholder="Enter age"
+                />
+              </div>
+
+              <div class="form-group">
+                <span class="field-label">Ticket Type</span>
+
+                <div class="radio-options">
+                  <label class="radio-card">
+                    <input
+                      type="radio"
+                      name="ticket-type"
+                      value="standard"
+                      checked
+                    />
+                    <span>Standard – £12</span>
+                  </label>
+
+                  <label class="radio-card">
+                    <input type="radio" name="ticket-type" value="vip" />
+                    <span>VIP – £20</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- HIDDEN UNTIL AGE IS 12–64 -->
+              <div class="form-group student-group" id="student-group">
+                <span class="field-label">Are you a student?</span>
+
+                <div class="radio-options">
+                  <label class="radio-card">
+                    <input type="radio" name="student" value="yes" />
+                    <span>Yes (−20%)</span>
+                  </label>
+
+                  <label class="radio-card">
+                    <input type="radio" name="student" value="no" />
+                    <span>No</span>
+                  </label>
+                </div>
+              </div>
+
+              <p class="error-message" id="error-message"></p>
+
+              <button type="button" class="add-btn">+ Add Ticket</button>
+            </div>
+          </section>
+
+          <!-- DISCOUNT RULES -->
+          <section class="discount-panel">
+            <h3>ⓘ &nbsp; Discount Rules:</h3>
+            <ul>
+              <li>Children under 12 – 50% off</li>
+              <li>Students (18–64) – 20% off</li>
+              <li>People 65 and over – 30% off</li>
+              <li>Only one discount per ticket</li>
+            </ul>
+          </section>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <section class="tickets-panel">
+          <h2>♧ &nbsp; Your Tickets</h2>
+
+          <div class="table-wrapper">
+            <table class="tickets-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Age</th>
+                  <th>Ticket</th>
+                  <th>Discount</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody id="tickets-body">
+                <!-- JavaScript will add tickets here -->
+              </tbody>
+            </table>
+          </div>
+
+          <p class="empty-message" id="empty-message">No tickets added yet.</p>
+
+          <div class="total-box">
+            <span>Total Price:</span>
+            <strong id="total-price">£0.00</strong>
+          </div>
+
+          <div class="actions">
+            <button type="button" class="clear-btn">Clear All</button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

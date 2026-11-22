@@ -1,0 +1,385 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  background: #f5f2ff;
+  color: #20153e;
+}
+
+.calculator {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 150px;
+  padding: 30px 40px;
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse at 70% 100%, #672448 0%, transparent 50%),
+    linear-gradient(110deg, #442044, #170f36);
+  color: white;
+  overflow: hidden;
+}
+
+.header-icon {
+  font-size: 65px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header h1 {
+  margin: 0 0 12px;
+  font-size: clamp(26px, 3vw, 46px);
+}
+
+.header p {
+  margin: 0;
+  font-size: 20px;
+  color: #f0e6ff;
+}
+
+.header-decoration {
+  font-size: 58px;
+  white-space: nowrap;
+}
+
+/* LAYOUT */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket-panel,
+.tickets-panel {
+  background: white;
+  border: 1px solid #e8defa;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(75, 40, 140, 0.06);
+}
+
+.ticket-panel h2,
+.tickets-panel h2 {
+  margin: 0;
+  padding: 24px 30px;
+  font-size: 27px;
+  background: #f1eaff;
+}
+
+.form-content {
+  padding: 24px 30px;
+}
+
+/* FORM */
+
+.form-group {
+  margin-bottom: 26px;
+}
+
+.form-group label,
+.field-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#age {
+  width: 100%;
+  padding: 15px 18px;
+  border: 2px solid #d3c8e8;
+  border-radius: 12px;
+  background: white;
+  color: #20153e;
+  font-size: 19px;
+  outline: none;
+}
+
+#age:focus {
+  border-color: #7b36d1;
+}
+
+#age.invalid {
+  border: 2px solid red;
+}
+
+.radio-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.radio-card {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 155px;
+  margin: 0 !important;
+  padding: 14px 16px;
+  border: 2px solid #ddd4ef;
+  border-radius: 12px;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  cursor: pointer;
+}
+
+.radio-card:has(input:checked) {
+  border-color: #9448ed;
+  background: #f1e6ff;
+}
+
+.radio-card input {
+  width: 19px;
+  height: 19px;
+  accent-color: #7633c7;
+}
+
+.student-group {
+  display: none;
+}
+
+.error-message {
+  min-height: 18px;
+  margin: 0 0 12px;
+  color: #d13d53;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+
+button {
+  padding: 17px 22px;
+  border: none;
+  border-radius: 13px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.add-btn {
+  background: linear-gradient(120deg, #973ce0, #541ba0);
+  color: white;
+}
+
+.add-btn {
+  width: 100%;
+}
+
+/* DISCOUNT RULES */
+
+.discount-panel {
+  padding: 24px 30px;
+  background: #eee6fc;
+  border-radius: 20px;
+}
+
+.discount-panel h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.discount-panel ul {
+  margin: 0;
+  padding-left: 32px;
+}
+
+.discount-panel li {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+/* TICKETS TABLE */
+
+.tickets-panel {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+
+.table-wrapper {
+  margin: 16px 20px;
+  overflow-x: auto;
+}
+
+.tickets-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 16px;
+}
+
+.tickets-table th {
+  padding: 17px 12px;
+  background: #e9d8fa;
+}
+
+.tickets-table th:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+.tickets-table th:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+.tickets-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #e9e1f4;
+}
+
+.tickets-table tbody tr:hover {
+  background: #faf7ff;
+}
+
+.discount-badge {
+  display: inline-block;
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #d9f5e2;
+  color: #166735;
+  font-weight: bold;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  background: transparent;
+  color: #74668b;
+  font-size: 20px;
+}
+
+.empty-message {
+  padding: 15px;
+  color: #8b809e;
+  text-align: center;
+}
+
+/* TOTAL PRICE */
+
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin: auto 20px 24px;
+  padding: 22px;
+  border-radius: 17px;
+  background: #f0e6ff;
+}
+
+.total-box span {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.total-box strong {
+  padding: 14px 25px;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #943be0, #541ba0);
+  color: white;
+  font-size: 30px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.clear-btn {
+  min-width: 180px;
+  background: #f6f2fd;
+  border: 2px solid #c9bde0;
+  color: #302449;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 950px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .header-decoration {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 22px;
+  }
+
+  .header-icon {
+    font-size: 40px;
+  }
+
+  .header h1 {
+    font-size: 25px;
+  }
+
+  .header p {
+    font-size: 14px;
+  }
+
+  .form-content,
+  .discount-panel {
+    padding: 20px;
+  }
+
+  .ticket-panel h2,
+  .tickets-panel h2 {
+    padding: 20px;
+    font-size: 23px;
+  }
+
+  .radio-options,
+  .actions {
+    flex-direction: column;
+  }
+
+  .total-box span {
+    font-size: 18px;
+  }
+
+  .total-box strong {
+    font-size: 22px;
+    padding: 12px;
+  }
+
+  .clear-btn,
+  .calculate-btn {
+    width: 100%;
+  }
+}
