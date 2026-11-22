@@ -79,4 +79,8 @@ No installation or external dependencies are required.
 
 Developed by [aledjan1](https://github.com/aledjan1) as part of my JavaScript learning journey.
 
+## My demo project
+
+https://aledjan1.github.io/Cinema-Ticket-Calculator/
+
 The project focuses on building practical frontend development skills through hands-on practice.
